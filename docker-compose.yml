@@ -1,0 +1,14 @@
+   version: '3'
+
+   services:
+     devpi:
+       image: devpi-server
+       environment:
+         - DEVPI_SERVER_PORT=3141
+       ports:
+         - 3141:3141
+       volumes:
+         - devpi-data:/root/.devpi
+
+   volumes:
+     devpi-data:
