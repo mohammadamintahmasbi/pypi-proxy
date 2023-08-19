@@ -2,13 +2,13 @@
 
    services:
      devpi:
-       image: devpi-server
-       environment:
-         - DEVPI_SERVER_PORT=3141
+       image: muccg/devpi
        ports:
-         - 3141:3141
+         - 127.0.0.1:3141:3141
        volumes:
          - devpi-data:/root/.devpi
 
    volumes:
      devpi-data:
+        driver: local
+        name: devpi-data
